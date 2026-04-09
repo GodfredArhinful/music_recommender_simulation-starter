@@ -21,6 +21,13 @@ This system works like a simple content-based recommender: each song is describe
 
 ### Data Flow
 
+flowchart TD
+    A[User Profile\nPrefs: Genre, Mood, Energy] --> B{The Loop:\nScore Each Song in CSV}
+    C[(songs.csv)] --> B
+    B --> D[Sorting Logic:\nSort by Score Descending]
+    D --> E[Output:\nTop K Recommendations]
+
+
 ![alt text](image.png)
 
 ### Algorithm Recipe
@@ -220,4 +227,39 @@ A few sentences about what you learned:
 - What surprised you about how your system behaved
 - How did building this change how you think about real music recommenders
 - Where do you think human judgment still matters, even if the model seems "smart"
+
+
+--- 
+## Terminal GUI Screenshot
+
+![alt text](image.png)
+
+```text
+Loaded songs: 17
+
+==================================================
+ 🎧 TOP RECOMMENDATIONS 🎧
+==================================================
+
+#1 | Sunrise City by Neon Echo
+    🌟 Score: 3.98 / 4.00
+    💡 Why?   Genre match (+2.0), Mood match (+1.0), Energy match (+0.98)
+--------------------------------------------------
+#2 | Gym Hero by Max Pulse
+    🌟 Score: 2.87 / 4.00
+    💡 Why?   Genre match (+2.0), Energy match (+0.87)
+--------------------------------------------------
+#3 | Rooftop Lights by Indigo Parade
+    🌟 Score: 1.96 / 4.00
+    💡 Why?   Mood match (+1.0), Energy match (+0.96)
+--------------------------------------------------
+#4 | Focus Flow by LoRoom
+    🌟 Score: 0.99 / 4.00
+    💡 Why?   Energy match (+0.99)
+--------------------------------------------------
+#5 | Desert Echoes by Nomad Pulse
+    🌟 Score: 0.96 / 4.00
+    💡 Why?   Energy match (+0.96)
+--------------------------------------------------
+```
 
