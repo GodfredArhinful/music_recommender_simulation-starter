@@ -17,17 +17,27 @@ Replace this paragraph with your own summary of what your version does.
 
 ## How The System Works
 
-Explain your design in plain language.
+This system works like a simple content-based recommender: each song is described by musical features and each user is described by a preferred profile. The recommender compares the user's preferred vibe against each song's attributes, calculates a similarity score, and then ranks the songs so the best matches appear first. The version here prioritizes matching the user's desired energy and emotional tone, while also giving extra weight to genre similarity and mood alignment.
 
-Some prompts to answer:
+Song features:
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+- `genre`
+- `mood`
+- `energy`
+- `valence`
+- `danceability`
+- `acousticness`
+- `tempo_bpm`
 
-You can include a simple diagram or bullet list if helpful.
+UserProfile features:
+
+- preferred `genre`
+- preferred `mood`
+- preferred `energy`
+- preferred `valence`
+- preferred `danceability`
+- preferred `acousticness`
+- preferred `tempo_bpm`
 
 ---
 
